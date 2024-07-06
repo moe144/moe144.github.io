@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Idris - Business Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KBGOiCB6+F2GLyZGhBSlSdzXzLPN8un/AYODKX4DtSJG4rPmnIXrkV1l8T0oAop3/Rb84Jr4K0FrrLzP+49COA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -29,6 +30,8 @@
             justify-content: space-between;
             align-items: center;
             transition: transform 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(10px); /* Adds a slight blur effect to the header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
         }
         header.hidden {
             transform: translateY(-100%);
@@ -79,9 +82,25 @@
             background-color: #f3c623; /* Yellow background */
             border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 100%;
+            z-index: -1;
+            transition: left 0.3s ease;
+        }
+        .navbar a:hover::before {
+            left: 0;
         }
         .navbar a:hover {
-            background-color: #555; /* Darker background on hover */
             color: #fff; /* White text on hover */
         }
         .container {
@@ -96,6 +115,13 @@
             padding: 2rem;
             border-radius: 12px;
             background-color: #f9f9f9; /* Light gray background */
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+            opacity: 0;
+        }
+        section.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         section h2 {
             color: #333;
@@ -136,9 +162,12 @@
             background-color: #fff;
             border-radius: 12px;
             transition: transform 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
         }
         .service:hover {
-            transform: translateY(-5px);
+            transform: translateY(0);
+            opacity: 1;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .service h3 {
@@ -155,6 +184,13 @@
             border-radius: 12px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .testimonial.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         .testimonial p {
             color: #555;
@@ -188,9 +224,12 @@
             font-size: 1.1rem;
             color: #333;
             transition: transform 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
         }
-        .contact-info li:hover {
-            transform: translateY(-5px);
+        .contact-info li.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         .contact-info li img {
             width: 30px;
@@ -242,68 +281,57 @@
                 background-color: #f9f9f9; /* Light gray background */
             }
         }
-
-        @media only screen and (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            .navbar a {
-                padding: 8px 16px; /* Further reduced padding for smaller screens */
-            }
-            .container {
-                margin-top: 80px; /* Adjust as needed */
-            }
-        }
     </style>
 </head>
 <body>
-    <header id="header" class="visible">
-        <h1>Mohamed Idris</h1>
-        <div class="navbar">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+    <header class="hidden">
+        <div class="container">
+            <h1>Mohamed Idris</h1>
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
     <div class="container">
         <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to Mohamed Idris' business page. We specialize in delivering impactful marketing strategies and solutions tailored to your business needs.</p>
-            <p>With a focus on digital innovation and brand development, we are dedicated to driving growth and maximizing your brand's potential in today's competitive landscape.</p>
+            <h2>About Me</h2>
+            <p>I am Mohamed Idris, a seasoned marketer with a passion for digital strategies and brand development. Over the years, I have specialized in crafting compelling campaigns that resonate with target audiences and drive measurable results.</p>
+            <p>My expertise includes:</p>
+            <ul>
+                <li>Strategic Marketing Planning</li>
+                <li>Digital Marketing Campaigns</li>
+                <li>Brand Management</li>
+                <li>Content Creation and Marketing</li>
+                <li>Social Media Marketing</li>
+            </ul>
+            <p>Feel free to explore my business page where I showcase my services and client testimonials.</p>
         </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service">
-                    <h3>Strategic Marketing Planning</h3>
-                    <p>We develop customized marketing strategies aligned with your business goals to ensure maximum impact and ROI.</p>
-                </div>
-                <div class="service">
-                    <h3>Digital Marketing Campaigns</h3>
-                    <p>From SEO to social media, we execute targeted digital campaigns that enhance your online presence and drive traffic.</p>
-                </div>
-                <div class="service">
-                    <h3>Brand Management</h3>
-                    <p>We help define and manage your brand's identity to create a consistent and compelling brand experience across all channels.</p>
-                </div>
+        <section id="services" class="services">
+            <div class="service">
+                <h3>Digital Marketing</h3>
+                <p>Expertise in creating and managing digital marketing campaigns that drive engagement and conversions.</p>
+            </div>
+            <div class="service">
+                <h3>Brand Management</h3>
+                <p>We help define and manage your brand's identity to create a consistent and compelling brand experience across all channels.</p>
             </div>
         </section>
-        <section id="testimonials">
+        <section id="testimonials" class="testimonial">
             <h2>Client Testimonials</h2>
-            <div class="testimonial">
-                <p>"Mohamed Idris' team exceeded our expectations. Their strategic approach and attention to detail were instrumental in our marketing success."</p>
-                <p>- John Doe, CEO at ABC Inc.</p>
-            </div>
+            <p>"Mohamed Idris' team exceeded our expectations. Their strategic approach and attention to detail were instrumental in our marketing success."</p>
+            <p>- John Doe, CEO at ABC Inc.</p>
         </section>
-        <section id="contact">
+        <section id="contact" class="contact-info">
             <h2>Contact Us</h2>
-            <ul class="contact-info">
-                <li>
+            <ul>
+                <li class="visible">
                     <img src="https://img.icons8.com/dusk/64/000000/instagram-new.png"/>
                     <a href="https://www.instagram.com/34j1/">Instagram: 34j1</a>
                 </li>
-                <li>
+                <li class="visible">
                     <img src="https://img.icons8.com/color/64/000000/gmail--v1.png"/>
                     <a href="mailto:mohdssan135@gmail.com">Email: mohdssan135@gmail.com</a>
                 </li>
@@ -313,5 +341,23 @@
     <footer>
         <p>&copy; 2024 Mohamed Idris. All rights reserved.</p>
     </footer>
+    <script>
+        // Add JavaScript for header visibility on scroll
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scroll down
+                header.classList.add("hidden");
+            } else {
+                // Scroll up
+                header.classList.remove("hidden");
+                header.classList.add("visible");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
 </body>
 </html>
