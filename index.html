@@ -86,6 +86,21 @@
             color: #fff;
         }
 
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #f3c623; /* Yellow background */
+            color: #222; /* Text color */
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ffd700; /* Lighter yellow on hover */
+        }
+
         /* Footer styles */
         footer {
             background-color: #333;
@@ -107,7 +122,7 @@
         <nav>
             <a href="#about">About Me</a>
             <a href="#posts">Recent Blog Posts</a>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.html" class="btn">Portfolio</a>
             <a href="#contact">Contact Me</a>
         </nav>
     </header>
