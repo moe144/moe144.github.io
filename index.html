@@ -29,6 +29,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: transform 0.3s ease, visibility 0.3s ease;
+        }
+        header.hidden {
+            transform: translateY(-100%);
+            visibility: hidden;
+        }
+        header.visible {
+            transform: translateY(0);
+            visibility: visible;
         }
         header h1 {
             margin: 0;
@@ -199,7 +208,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="header" class="visible">
         <h1>Mohamed Idris</h1>
         <div class="navbar">
             <a href="#about">About</a>
@@ -261,5 +270,26 @@
     <footer>
         <p>&copy; 2024 Mohamed Idris. All rights reserved.</p>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                header.classList.add("hidden");
+                header.classList.remove("visible");
+            } else {
+                // Scroll up
+                header.classList.remove("hidden");
+                header.classList.add("visible");
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
 </body>
 </html>
