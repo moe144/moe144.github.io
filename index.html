@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Idris - Blog</title>
+    <title>Mohamed Idris - Business Page</title>
     <style>
         * {
             margin: 0;
@@ -91,6 +91,54 @@
         section ul li {
             margin-bottom: 0.5rem;
         }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .service {
+            width: 30%;
+            background-color: #f3f3f3;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .service h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .service p {
+            color: #666;
+        }
+        .testimonials {
+            margin-top: 2rem;
+        }
+        .testimonial {
+            background-color: #f3f3f3;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .testimonial p {
+            color: #555;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .cta a {
+            color: #fff;
+            background-color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta a:hover {
+            background-color: #555;
+        }
         footer {
             background-color: #333;
             text-align: center;
@@ -107,46 +155,60 @@
     <header>
         <h1>Mohamed Idris</h1>
         <div class="navbar">
-            <a href="#about">About Me</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </div>
     </header>
     <div class="container">
         <section id="about">
-            <h2>About Me</h2>
-            <p>I am Mohamed Idris, a seasoned marketer with a passion for digital strategies and brand development. Over the years, I have specialized in crafting compelling campaigns that resonate with target audiences and drive measurable results.</p>
-            <p>My expertise includes:</p>
-            <ul>
-                <li>Strategic Marketing Planning</li>
-                <li>Digital Marketing Campaigns</li>
-                <li>Brand Management</li>
-                <li>Content Creation and Marketing</li>
-                <li>Social Media Marketing</li>
-            </ul>
+            <h2>About</h2>
+            <p>Welcome to Mohamed Idris' business page. We specialize in delivering impactful marketing strategies and solutions tailored to your business needs.</p>
+            <p>With a focus on digital innovation and brand development, we are dedicated to driving growth and maximizing your brand's potential in today's competitive landscape.</p>
         </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <p>Here you can showcase your projects and achievements. This section will provide visitors with an overview of your work.</p>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Strategic Marketing Planning</h3>
+                    <p>We develop customized marketing strategies aligned with your business goals to ensure maximum impact and ROI.</p>
+                </div>
+                <div class="service">
+                    <h3>Digital Marketing Campaigns</h3>
+                    <p>From SEO and PPC to social media marketing, we execute targeted digital campaigns that engage your audience and drive conversions.</p>
+                </div>
+                <div class="service">
+                    <h3>Brand Management</h3>
+                    <p>We oversee every aspect of your brand's image, ensuring consistency and effectiveness across all channels.</p>
+                </div>
+                <div class="service">
+                    <h3>Content Creation</h3>
+                    <p>Compelling content that resonates with your audience, enhances brand awareness, and builds customer loyalty.</p>
+                </div>
+                <div class="service">
+                    <h3>Consulting and Training</h3>
+                    <p>Expert guidance and training sessions to empower your team with the latest marketing trends and strategies.</p>
+                </div>
+            </div>
         </section>
-        <section id="blog">
-            <h2>Blog</h2>
-            <p>Stay updated with my latest thoughts on marketing trends and strategies:</p>
-            <ul>
-                <li><a href="#" style="color: #f3c623; text-decoration: none;">Title of Blog Post 1</a></li>
-                <li><a href="#" style="color: #f3c623; text-decoration: none;">Title of Blog Post 2</a></li>
-                <!-- Add more blog post links as needed -->
-            </ul>
+        <section id="testimonials" class="testimonials">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial">
+                <p>"Working with Mohamed Idris has been transformative for our business. His strategic insights and dedication to our success have significantly boosted our brand's visibility and revenue."</p>
+                <p>- John Doe, CEO at ABC Company</p>
+            </div>
+            <div class="testimonial">
+                <p>"Mohamed's team executed a flawless digital marketing campaign that exceeded our expectations. Their attention to detail and proactive approach made a real difference."</p>
+                <p>- Jane Smith, Marketing Director at XYZ Corporation</p>
+            </div>
         </section>
         <section id="contact">
-            <h2>Contact Information</h2>
-            <p>You can reach me via the following methods:</p>
-            <ul>
-                <li>Email: <a href="mailto:mohdssan135@gmail.com" style="color: #f3c623; text-decoration: none;">mohdssan135@gmail.com</a></li>
-                <li>Phone: +123-456-7890</li>
-                <li>Instagram: <a href="https://www.instagram.com/34j1" style="color: #f3c623; text-decoration: none;" target="_blank">@34j1</a></li>
-            </ul>
+            <h2>Contact Us</h2>
+            <p>Ready to elevate your brand's marketing strategy? Contact us today!</p>
+            <div class="cta">
+                <a href="mailto:mohdssan135@gmail.com">Get in Touch</a>
+            </div>
         </section>
     </div>
     <footer>
