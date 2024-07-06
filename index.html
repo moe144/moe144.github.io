@@ -18,7 +18,7 @@
             scroll-behavior: smooth;
         }
         header {
-            background-color: #333;
+            background-color: #f9f9f9; /* Lighter background color */
             padding: 1rem;
             text-align: center;
             position: fixed;
@@ -33,7 +33,7 @@
         header h1 {
             margin: 0;
             font-size: 2rem;
-            color: #f3c623;
+            color: #333; /* Dark text */
         }
         .navbar {
             display: flex;
@@ -42,18 +42,19 @@
             margin-top: 10px;
         }
         .navbar a {
-            color: #fff; /* White text */
+            color: #333; /* Dark text */
             text-decoration: none;
             margin: 0 15px;
             padding: 12px 24px;
-            background-color: #333; /* Dark background */
-            border: 2px solid #f3c623; /* Yellow border */
+            background-color: #f3c623; /* Yellow background */
+            border: 2px solid transparent;
             border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         .navbar a:hover {
-            background-color: #f3c623; /* Yellow background on hover */
-            color: #333; /* Dark text on hover */
+            background-color: #555; /* Darker background on hover */
+            color: #fff; /* White text on hover */
+            border-color: #555; /* Darker border on hover */
         }
         .container {
             max-width: 1200px;
