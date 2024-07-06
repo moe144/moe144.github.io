@@ -103,6 +103,22 @@
             border-bottom: 2px solid #f3c623; /* Yellow border bottom */
             display: inline-block;
             padding-bottom: 5px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #f3c623; /* Yellow line */
+            bottom: -1px;
+            left: 0;
+            transform-origin: bottom center;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        section h2:hover::after {
+            transform: scaleX(1);
         }
         section p {
             color: #666;
@@ -159,6 +175,31 @@
         .cta a:hover {
             background-color: #555;
         }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .contact-info li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .contact-info li:hover {
+            transform: translateY(-5px);
+        }
+        .contact-info li img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        .contact-info li a {
+            color: #333;
+            text-decoration: none;
+        }
         footer {
             background-color: #333;
             text-align: center;
@@ -188,6 +229,17 @@
             .container {
                 padding: 1rem;
                 margin-top: 100px; /* Adjust as needed */
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-info li {
+                font-size: 1rem;
+                margin-top: 10px;
+                padding: 10px;
+                border-radius: 12px;
+                background-color: #f9f9f9; /* Light gray background */
             }
         }
 
@@ -233,60 +285,33 @@
                 </div>
                 <div class="service">
                     <h3>Brand Management</h3>
-                    <p>We help build and maintain your brand identity across all channels, fostering customer trust and loyalty.</p>
-                </div>
-                <div class="service">
-                    <h3>Content Creation</h3>
-                    <p>Engage your audience with compelling content that tells your brand story and attracts new customers.</p>
+                    <p>We help define and manage your brand's identity to create a consistent and compelling brand experience across all channels.</p>
                 </div>
             </div>
         </section>
         <section id="testimonials">
             <h2>Client Testimonials</h2>
             <div class="testimonial">
-                <p>"Mohamed Idris' team exceeded our expectations with their strategic insights and creative solutions. Highly recommended!"</p>
-                <p>- John Doe, CEO at Example Company</p>
-            </div>
-            <div class="testimonial">
-                <p>"Their expertise in digital marketing has been instrumental in our business growth. Great to work with!"</p>
-                <p>- Jane Smith, Marketing Director at Another Company</p>
+                <p>"Mohamed Idris' team exceeded our expectations. Their strategic approach and attention to detail were instrumental in our marketing success."</p>
+                <p>- John Doe, CEO at ABC Inc.</p>
             </div>
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Get in touch with us to discuss how we can elevate your business:</p>
-            <ul>
-                <li>Email: mohdssan135@gmail.com</li>
-                <li>Instagram: @34j1</li>
+            <ul class="contact-info">
+                <li>
+                    <img src="https://img.icons8.com/dusk/64/000000/instagram-new.png"/>
+                    <a href="https://www.instagram.com/34j1/">Instagram: 34j1</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/color/64/000000/gmail--v1.png"/>
+                    <a href="mailto:mohdssan135@gmail.com">Email: mohdssan135@gmail.com</a>
+                </li>
             </ul>
         </section>
-        <div class="cta">
-            <a href="#">Back to Top</a>
-        </div>
     </div>
     <footer>
         <p>&copy; 2024 Mohamed Idris. All rights reserved.</p>
     </footer>
-
-    <script>
-        let lastScrollTop = 0;
-        const header = document.getElementById("header");
-
-        window.addEventListener("scroll", function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
-                // Scroll down
-                header.classList.add("hidden");
-                header.classList.remove("visible");
-            } else {
-                // Scroll up
-                header.classList.remove("hidden");
-                header.classList.add("visible");
-            }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-    </script>
 </body>
 </html>
