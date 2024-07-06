@@ -28,15 +28,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: transform 0.3s ease, visibility 0.3s ease;
+            transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
         }
         header.hidden {
             transform: translateY(-100%);
             visibility: hidden;
+            opacity: 0;
         }
         header.visible {
             transform: translateY(0);
             visibility: visible;
+            opacity: 1;
         }
         header h1 {
             margin: 0;
@@ -331,5 +333,19 @@
     <footer>
         <p>&copy; 2024 Mohamed Idris. All rights reserved.</p>
     </footer>
+    <script>
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Scroll down
+                document.getElementById("header").classList.add("hidden");
+            } else {
+                // Scroll up
+                document.getElementById("header").classList.remove("hidden");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+    </script>
 </body>
 </html>
