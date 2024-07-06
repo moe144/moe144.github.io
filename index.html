@@ -5,60 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Idris - Blog</title>
     <style>
-        /* Reset default margin and padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Body styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #222;
             color: #fff;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            scroll-behavior: smooth;
         }
-
-        /* Header styles */
         header {
             background-color: #333;
             padding: 1rem;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
             font-size: 2rem;
             color: #fff;
         }
-        header p {
-            color: #ccc;
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }
-        header nav {
-            margin-top: 1rem;
-        }
-        header nav a {
+        .navbar a {
             color: #fff;
             text-decoration: none;
-            margin-right: 1rem;
-            transition: color 0.3s ease;
+            margin: 0 15px;
+            padding: 10px 15px;
+            background-color: #f3c623;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        header nav a:hover {
-            color: #f0f0f0;
+        .navbar a:hover {
+            background-color: #ffd700;
         }
-
-        /* Main container styles */
         .container {
             max-width: 800px;
-            margin: auto;
+            margin: 70px auto 0;
             padding: 2rem;
         }
-
-        /* Section styles */
         section {
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
             background-color: #444;
             padding: 1.5rem;
             border-radius: 8px;
@@ -70,45 +66,11 @@
         section p {
             color: #ccc;
         }
-        section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        section ul li {
-            margin-bottom: 0.5rem;
-        }
-        section ul li a {
-            color: #9f9f9f;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        section ul li a:hover {
-            color: #fff;
-        }
-
-        /* Button styles */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #f3c623; /* Yellow background */
-            color: #222; /* Text color */
-            text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #ffd700; /* Lighter yellow on hover */
-        }
-
-        /* Footer styles */
         footer {
             background-color: #333;
             text-align: center;
             padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 4rem;
         }
         footer p {
             color: #ccc;
@@ -118,13 +80,12 @@
 <body>
     <header>
         <h1>Mohamed Idris</h1>
-        <p>Welcome to my blog</p>
-        <nav>
-            <a href="about.html" class="btn">About Me</a>
-            <a href="portfolio.html" class="btn">Portfolio</a>
-            <a href="blog.html" class="btn">Recent Blog Posts</a>
-            <a href="contact.html" class="btn">Contact Me</a>
-        </nav>
+        <div class="navbar">
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
     </header>
     <div class="container">
         <section id="about">
@@ -138,7 +99,28 @@
                 <li>Content Creation and Marketing</li>
                 <li>Social Media Marketing</li>
             </ul>
-            <p>Feel free to explore my blog where I share insights and tips on marketing strategies and trends.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Here you can showcase your projects and achievements. This section will provide visitors with an overview of your work.</p>
+        </section>
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Stay updated with my latest thoughts on marketing trends and strategies:</p>
+            <ul>
+                <li><a href="#" style="color: #9f9f9f; text-decoration: none;">Title of Blog Post 1</a></li>
+                <li><a href="#" style="color: #9f9f9f; text-decoration: none;">Title of Blog Post 2</a></li>
+                <!-- Add more blog post links as needed -->
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>You can reach me via the following methods:</p>
+            <ul>
+                <li>Email: <a href="mailto:mohdssan135@gmail.com" style="color: #f3c623; text-decoration: none;">mohdssan135@gmail.com</a></li>
+                <li>Phone: +123-456-7890</li>
+                <li>Instagram: <a href="https://www.instagram.com/34j1" style="color: #f3c623; text-decoration: none;" target="_blank">@34j1</a></li>
+            </ul>
         </section>
     </div>
     <footer>
