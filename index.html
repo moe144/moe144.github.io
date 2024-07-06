@@ -166,6 +166,36 @@
         footer p {
             color: #ccc;
         }
+
+        /* Responsive Adjustments */
+        @media only screen and (max-width: 768px) {
+            header {
+                padding: 0.8rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                margin-top: 0;
+            }
+            .navbar a {
+                margin: 10px 0;
+            }
+            .container {
+                padding: 1rem;
+                margin-top: 100px; /* Adjust as needed */
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                margin-top: 80px; /* Adjust as needed */
+            }
+        }
     </style>
 </head>
 <body>
@@ -193,40 +223,40 @@
                 </div>
                 <div class="service">
                     <h3>Digital Marketing Campaigns</h3>
-                    <p>From SEO and PPC to social media marketing, we execute targeted digital campaigns that engage your audience and drive conversions.</p>
+                    <p>From SEO to social media, we execute targeted digital campaigns that enhance your online presence and drive traffic.</p>
                 </div>
                 <div class="service">
                     <h3>Brand Management</h3>
-                    <p>We oversee every aspect of your brand's image, ensuring consistency and effectiveness across all channels.</p>
+                    <p>We help build and maintain your brand identity across all channels, fostering customer trust and loyalty.</p>
                 </div>
                 <div class="service">
                     <h3>Content Creation</h3>
-                    <p>Compelling content that resonates with your audience, enhances brand awareness, and builds customer loyalty.</p>
-                </div>
-                <div class="service">
-                    <h3>Consulting and Training</h3>
-                    <p>Expert guidance and training sessions to empower your team with the latest marketing trends and strategies.</p>
+                    <p>Engage your audience with compelling content that tells your brand story and attracts new customers.</p>
                 </div>
             </div>
         </section>
         <section id="testimonials">
             <h2>Client Testimonials</h2>
             <div class="testimonial">
-                <p>"Working with Mohamed Idris has been transformative for our business. His strategic insights and dedication to our success have significantly boosted our brand's visibility and revenue."</p>
-                <p>- John Doe, CEO at ABC Company</p>
+                <p>"Mohamed Idris' team exceeded our expectations with their strategic insights and creative solutions. Highly recommended!"</p>
+                <p>- John Doe, CEO at Example Company</p>
             </div>
             <div class="testimonial">
-                <p>"Mohamed's team executed a flawless digital marketing campaign that exceeded our expectations. Their attention to detail and proactive approach made a real difference."</p>
-                <p>- Jane Smith, Marketing Director at XYZ Corporation</p>
+                <p>"Their expertise in digital marketing helped us achieve significant growth in a competitive market. Great team to work with!"</p>
+                <p>- Jane Smith, Marketing Director at Another Company</p>
             </div>
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Ready to elevate your brand's marketing strategy? Contact us today!</p>
-            <div class="cta">
-                <a href="mailto:mohdssan135@gmail.com">Get in Touch</a>
-            </div>
+            <p>Get in touch with us to discuss how we can elevate your business:</p>
+            <ul>
+                <li>Email: mohdssan135@gmail.com</li>
+                <li>Instagram: @34j1</li>
+            </ul>
         </section>
+        <div class="cta">
+            <a href="#">Back to Top</a>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Mohamed Idris. All rights reserved.</p>
