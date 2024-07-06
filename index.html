@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Idris - Business Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file for styling -->
     <style>
         * {
             margin: 0;
@@ -51,75 +52,59 @@
             transform: scale(1.1);
         }
         .container {
-            max-width: 800px;
-            margin: 100px auto 0;
+            max-width: 900px; /* Increased max-width for more spacious layout */
+            margin: 120px auto 0; /* Adjusted top margin for better positioning */
             padding: 2rem;
+            background-color: #fff; /* Added background color for container */
+            border-radius: 8px; /* Added border-radius for rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added subtle box shadow for depth */
         }
         section {
             margin-bottom: 4rem;
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         section h2 {
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border-bottom: 2px solid #f3c623;
             display: inline-block;
             padding-bottom: 5px;
         }
-        section p, section ul {
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        section ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
-        }
-        section ul li {
-            margin-bottom: 0.5rem;
+        section p {
+            color: #666;
+            margin-bottom: 1.5rem;
         }
         .services {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px; /* Added gap between service items */
+            justify-content: space-between;
         }
         .service {
-            width: 30%;
-            background-color: #f3f3f3;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            flex: 1 1 300px; /* Improved flexibility and adjusted width for better alignment */
+            padding: 1.5rem;
+            background-color: #f9f9f9; /* Lightened service background color */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-5px); /* Added hover effect to lift service items */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .service h3 {
             color: #333;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         .service p {
             color: #666;
-        }
-        .testimonials {
-            margin-top: 2rem;
+            line-height: 1.5;
         }
         .testimonial {
-            background-color: #f3f3f3;
-            padding: 1rem;
+            background-color: #f9f9f9;
+            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
         .testimonial p {
             color: #555;
@@ -129,10 +114,11 @@
             margin-top: 2rem;
         }
         .cta a {
+            display: inline-block;
             color: #fff;
             background-color: #333;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -163,7 +149,7 @@
     </header>
     <div class="container">
         <section id="about">
-            <h2>About</h2>
+            <h2>About Us</h2>
             <p>Welcome to Mohamed Idris' business page. We specialize in delivering impactful marketing strategies and solutions tailored to your business needs.</p>
             <p>With a focus on digital innovation and brand development, we are dedicated to driving growth and maximizing your brand's potential in today's competitive landscape.</p>
         </section>
@@ -192,7 +178,7 @@
                 </div>
             </div>
         </section>
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials">
             <h2>Client Testimonials</h2>
             <div class="testimonial">
                 <p>"Working with Mohamed Idris has been transformative for our business. His strategic insights and dedication to our success have significantly boosted our brand's visibility and revenue."</p>
