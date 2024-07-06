@@ -358,6 +358,38 @@
             }
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
+
+        // Add JavaScript for smooth scrolling
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add JavaScript for revealing sections on scroll
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
